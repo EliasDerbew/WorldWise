@@ -6,6 +6,7 @@ import PageNoteFound from "./Pages/PageNoteFound";
 import Applayout from "./Pages/Applayouot";
 import Login from "./Pages/Login";
 import CitiesList from "./components/CitiesList";
+import CountryList from "./components/CountryList";
 import { useState, useEffect } from "react";
 
 const BASE_URL = "http://localhost:8000";
@@ -39,7 +40,7 @@ export default function App() {
         <Route path="app" element={<Applayout />}>
           <Route index element={<CitiesList cities = {cities} isLoading = {isLoading}/>} />
           <Route path="cities" element={<CitiesList cities = {cities} isLoading ={isLoading} />} />
-          <Route path="countries" element={<p>Countries</p>} />
+          <Route path="countries" element={<CountryList cities = {cities} isLoading = {isLoading}/>} />
           <Route path="Form" element={<p>Form</p>} />
         </Route>
         <Route path="login" element={<Login />} />
